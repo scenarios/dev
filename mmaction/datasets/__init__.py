@@ -22,3 +22,7 @@ __all__ = [
     'RawVideoDataset', 'AVADataset', 'AudioVisualDataset',
     'BaseMiniBatchBlending', 'CutmixBlending', 'MixupBlending'
 ]
+
+from .wevideo_dataset import WeVideoDataset
+
+__all__.append('WeVideoDataset')
