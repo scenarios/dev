@@ -33,3 +33,7 @@ __all__ = [
     'RandomScale', 'ImageDecode', 'BuildPseudoClip', 'RandomRescale',
     'PyAVDecodeMotionVector', 'Rename', 'Imgaug'
 ]
+
+from .wevideo_loading_factory import SampleWeVideoFrames
+
+__all__.append('SampleWeVideoFrames')
