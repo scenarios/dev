@@ -320,7 +320,7 @@ class WeVideoDataset(WeVideoBaseDataset):
             test_mode,
             modality=modality,
             num_video_classes=num_video_classes,
-            num_action_classes = num_action_classes)
+            num_action_classes=num_action_classes)
 
         if self.proposal_file is not None:
             self.proposals = mmcv.load(self.proposal_file)
@@ -502,6 +502,7 @@ class WeVideoDataset(WeVideoBaseDataset):
         results = copy.deepcopy(self.video_infos[idx])
         img_key = results['img_key']
 
+        results['filename'] = results['frame_dir']
         results['filename_tmpl'] = self.filename_tmpl
         results['modality'] = self.modality
         results['start_index'] = self.start_index
@@ -539,6 +540,7 @@ class WeVideoDataset(WeVideoBaseDataset):
         results = copy.deepcopy(self.video_infos[idx])
         img_key = results['img_key']
 
+        results['filename'] = results['frame_dir']
         results['filename_tmpl'] = self.filename_tmpl
         results['modality'] = self.modality
         results['start_index'] = self.start_index
