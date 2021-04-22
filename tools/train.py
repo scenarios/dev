@@ -110,7 +110,7 @@ def main():
         #init_dist(args.launcher, **cfg.dist_params)
         from torch import distributed as dist
         torch.cuda.set_device(args.local_rank)
-        dist.init_process_group(backend='nccl', **cfg.dist_params)
+        dist.init_process_group(**cfg.dist_params)
 
     # The flag is used to determine whether it is omnisource training
     cfg.setdefault('omnisource', False)
